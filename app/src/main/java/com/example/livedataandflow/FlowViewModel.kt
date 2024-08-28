@@ -1,11 +1,16 @@
 package com.example.livedataandflow
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
 class FlowViewModel : ViewModel() {
@@ -18,7 +23,25 @@ class FlowViewModel : ViewModel() {
     private val _work = MutableStateFlow("none")
     val work = _work.asStateFlow()
 
+    private val _pollingPlayerState = Channel<Unit>()
+    val pollingPlayerState = _pollingPlayerState.receiveAsFlow()
+//    private val _pollingPlayerState = MutableSharedFlow<Unit>()
+//    val pollingPlayerState = _pollingPlayerState.asSharedFlow()
+
     fun doSetWork() {
         _work.tryEmit("바뀌냐??")
+    }
+
+    fun triggerPollingPlayerState() {
+        Log.d(TAG, "in triggerPollingPlayerState")
+        val result = _pollingPlayerState.trySend(Unit)
+//        viewModelScope.launch {
+//            Log.d(TAG, "in _pollingPlayerState.emit(Unit)")
+//            _pollingPlayerState.emit(Unit)
+//        }
+
+        Log.d(TAG, "result.isSuccess: ${result.isSuccess}")
+        Log.d(TAG, "result.isFailure: ${result.isFailure}")
+        Log.d(TAG, "result.isClosed: ${result.isClosed}")
     }
 }

@@ -12,14 +12,17 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.example.livedataandflow.databinding.ActivityFlowBinding
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.take
 import kotlinx.coroutines.launch
+import kotlin.time.Duration.Companion.seconds
 
 class FlowActivity : AppCompatActivity() {
     private val TAG = javaClass.simpleName
     private lateinit var binding: ActivityFlowBinding
     private val viewModel: FlowViewModel by viewModels()
+    private val REPEAT_INTERVAL = 2.seconds
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -84,6 +87,10 @@ class FlowActivity : AppCompatActivity() {
                     }
                 }
             }
+
+            triggerChannel.setOnClickListener {
+                viewModel.triggerPollingPlayerState()
+            }
         }
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.flow)) { v, insets ->
@@ -104,11 +111,43 @@ class FlowActivity : AppCompatActivity() {
                 }
             }
         }
+
+        observe()
     }
 
     override fun onStart() {
         super.onStart()
         Log.d(TAG, "onStart")
+//        viewModel.triggerPollingPlayerState()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "onResume")
+        viewModel.triggerPollingPlayerState()
+    }
+
+    private fun observe() {
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                launch {
+                    viewModel.pollingPlayerState.collectLatest {
+                        Log.d(TAG, "in viewModel.pollingPlayerState.collectLatest")
+                        pollingPlayerState()
+                            .collectLatest {
+                                Log.d(TAG, "pollingPlayerState::got $it")
+                            }
+                    }
+                }
+            }
+        }
+    }
+
+    private fun pollingPlayerState() = flow {
+        while (true) {
+            emit(Unit)
+            kotlinx.coroutines.delay(REPEAT_INTERVAL)
+        }
     }
 
     fun makeFlow() = flow {

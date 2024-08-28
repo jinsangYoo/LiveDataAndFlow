@@ -47,6 +47,12 @@
             android:layout_height="wrap_content"
             android:text="result" />
 
+        <Button
+            android:id="@+id/triggerChannel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="triggerChannel" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
