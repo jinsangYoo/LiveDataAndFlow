@@ -29,6 +29,12 @@
             android:layout_height="wrap_content"
             android:text="WorkManager" />
 
+        <Button
+            android:id="@+id/blur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Blur" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

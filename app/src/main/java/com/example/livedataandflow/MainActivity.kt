@@ -37,6 +37,11 @@ class MainActivity : AppCompatActivity() {
                     startActivity(this)
                 }
             }
+            blur.setOnClickListener {
+                Intent(applicationContext, BlurActivity::class.java).run {
+                    startActivity(this)
+                }
+            }
         }
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->

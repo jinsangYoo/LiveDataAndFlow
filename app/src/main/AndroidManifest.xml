@@ -13,6 +13,9 @@
         android:theme="@style/Theme.LiveDataAndFlow"
         tools:targetApi="31">
         <activity
+            android:name=".BlurActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:configChanges="keyboard|orientation|screenSize"
             android:exported="true">
@@ -22,11 +25,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".FlowActivity"
+        <activity
+            android:name=".FlowActivity"
             android:exported="false" />
-
-        <activity android:name=".WMActivity"
+        <activity
+            android:name=".WMActivity"
             android:exported="false" />
     </application>
 
