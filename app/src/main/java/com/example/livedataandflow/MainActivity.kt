@@ -42,6 +42,11 @@ class MainActivity : AppCompatActivity() {
                     startActivity(this)
                 }
             }
+            widget.setOnClickListener {
+                Intent(applicationContext, WidgetActivity::class.java).run {
+                    startActivity(this)
+                }
+            }
         }
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
