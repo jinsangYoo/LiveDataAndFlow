@@ -47,6 +47,11 @@ class MainActivity : AppCompatActivity() {
                     startActivity(this)
                 }
             }
+            sharedflow.setOnClickListener {
+                Intent(applicationContext, SharedFlowActivity::class.java).run {
+                    startActivity(this)
+                }
+            }
         }
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
