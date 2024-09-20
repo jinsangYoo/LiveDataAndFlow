@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LiveDataAndFlow</string>
+    <string name="hello">안녕</string>
+    <string name="language_code">언어코드:</string>
+</resources>
