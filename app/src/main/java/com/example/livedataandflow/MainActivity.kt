@@ -9,13 +9,11 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
 import com.example.livedataandflow.databinding.ActivityMainBinding
-import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.take
-import kotlinx.coroutines.launch
+import com.example.livedataandflow.flow.FlowActivity
+import com.example.livedataandflow.image.BlurActivity
+import com.example.livedataandflow.widget.WidgetActivity
+import com.example.livedataandflow.workmanager.WMActivity
 
 class MainActivity : AppCompatActivity() {
     private val TAG = javaClass.simpleName
@@ -44,11 +42,6 @@ class MainActivity : AppCompatActivity() {
             }
             widget.setOnClickListener {
                 Intent(applicationContext, WidgetActivity::class.java).run {
-                    startActivity(this)
-                }
-            }
-            sharedflow.setOnClickListener {
-                Intent(applicationContext, SharedFlowActivity::class.java).run {
                     startActivity(this)
                 }
             }

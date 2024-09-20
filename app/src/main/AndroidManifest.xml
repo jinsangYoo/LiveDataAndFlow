@@ -15,15 +15,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LiveDataAndFlow">
         <activity
-            android:name=".SharedFlowActivity"
+            android:name=".flow.SharedFlowActivity"
             android:exported="false"
             android:theme="@style/Theme.LiveDataAndFlow" />
         <activity
-            android:name=".WidgetActivity"
+            android:name=".widget.WidgetActivity"
             android:exported="false" />
 
         <receiver
-            android:name=".ExampleAppWidgetProvider"
+            android:name=".widget.ExampleAppWidgetProvider"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -36,7 +36,7 @@
         </receiver>
 
         <activity
-            android:name=".BlurActivity"
+            android:name=".image.BlurActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -49,10 +49,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FlowActivity"
+            android:name=".flow.FlowActivity"
             android:exported="false" />
         <activity
-            android:name=".WMActivity"
+            android:name=".workmanager.WMActivity"
             android:exported="false" />
     </application>
 

@@ -1,4 +1,4 @@
-package com.example.livedataandflow
+package com.example.livedataandflow.flow
 
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.livedataandflow.R
 import com.example.livedataandflow.databinding.ActivitySharedFlowBinding
 
 class SharedFlowActivity : AppCompatActivity() {

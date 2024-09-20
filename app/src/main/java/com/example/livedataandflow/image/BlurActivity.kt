@@ -1,4 +1,4 @@
-package com.example.livedataandflow
+package com.example.livedataandflow.image
 
 import android.graphics.Bitmap
 import android.graphics.Canvas
@@ -10,8 +10,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.livedataandflow.R
 import com.example.livedataandflow.databinding.ActivityBlurBinding
-import com.example.livedataandflow.databinding.ActivityMainBinding
 
 class BlurActivity : AppCompatActivity() {
     private lateinit var binding: ActivityBlurBinding

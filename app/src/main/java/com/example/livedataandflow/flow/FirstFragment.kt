@@ -1,4 +1,4 @@
-package com.example.livedataandflow
+package com.example.livedataandflow.flow
 
 import android.os.Bundle
 import android.util.Log
@@ -7,11 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import com.example.livedataandflow.databinding.FragmentFirstBinding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 /**
@@ -27,7 +25,7 @@ class FirstFragment : Fragment() {
     private val sharedFlow = MutableSharedFlow<Int>(replay = 1)
 //    private val sharedFlow2 = MutableSharedFlow<Int>()
     private val sharedFlow2 = MutableSharedFlow<Int>(extraBufferCapacity = 3)
-    private val sharedFlow3 = MutableSharedFlow<Int>(replay = 2)
+    private val sharedFlow3 = MutableSharedFlow<Int>(replay = 0)
     private val sharedFlow4 = MutableSharedFlow<Int>(extraBufferCapacity = 2)
 
     override fun onCreateView(

@@ -1,4 +1,4 @@
-package com.example.livedataandflow
+package com.example.livedataandflow.widget
 
 import android.content.ComponentName
 import android.content.Intent
@@ -7,8 +7,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.livedataandflow.ExampleAppWidgetProvider.Companion.ACTION_UPDATE_COUNT
-import com.example.livedataandflow.ExampleAppWidgetProvider.Companion.EXTRA_COUNT
+import com.example.livedataandflow.R
+import com.example.livedataandflow.widget.ExampleAppWidgetProvider.Companion.ACTION_UPDATE_COUNT
+import com.example.livedataandflow.widget.ExampleAppWidgetProvider.Companion.EXTRA_COUNT
 import com.example.livedataandflow.databinding.ActivityWidgetBinding
 import kotlin.random.Random
 

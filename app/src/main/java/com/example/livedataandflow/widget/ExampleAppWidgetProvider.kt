@@ -1,4 +1,4 @@
-package com.example.livedataandflow
+package com.example.livedataandflow.widget
 
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
@@ -9,6 +9,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.RemoteViews
+import com.example.livedataandflow.MainActivity
+import com.example.livedataandflow.R
 
 /**
  * Implementation of App Widget functionality.
@@ -52,7 +54,8 @@ class ExampleAppWidgetProvider : AppWidgetProvider() {
 //                        }
 //                )
                 setOnClickPendingIntent(R.id.appwidget_button_1, pendingIntent)
-                setOnClickPendingIntent(R.id.appwidget_button_2,
+                setOnClickPendingIntent(
+                    R.id.appwidget_button_2,
                     Intent(context, WidgetActivity::class.java)
                         .apply {
                             action = "save"

@@ -1,4 +1,4 @@
-package com.example.livedataandflow
+package com.example.livedataandflow.workmanager
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -6,6 +6,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.livedataandflow.R
 import com.example.livedataandflow.databinding.ActivityWmBinding
 
 class WMActivity  : AppCompatActivity() {

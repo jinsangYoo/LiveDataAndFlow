@@ -1,5 +1,6 @@
-package com.example.livedataandflow
+package com.example.livedataandflow.flow
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
@@ -10,9 +11,9 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import com.example.livedataandflow.R
 import com.example.livedataandflow.databinding.ActivityFlowBinding
 import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.take
 import kotlinx.coroutines.launch
@@ -91,6 +92,12 @@ class FlowActivity : AppCompatActivity() {
             triggerChannel.setOnClickListener {
                 viewModel.triggerPollingPlayerState()
             }
+
+            sharedflow.setOnClickListener {
+                Intent(applicationContext, SharedFlowActivity::class.java).run {
+                    startActivity(this)
+                }
+            }
         }
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.flow)) { v, insets ->
@@ -102,14 +109,6 @@ class FlowActivity : AppCompatActivity() {
                 systemBars.bottom
             )
             insets
-        }
-
-        lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.work.collectLatest {
-                    binding.result.text = it
-                }
-            }
         }
 
         observe()
@@ -137,6 +136,12 @@ class FlowActivity : AppCompatActivity() {
                             .collectLatest {
                                 Log.d(TAG, "pollingPlayerState::got $it")
                             }
+                    }
+                }
+
+                launch {
+                    viewModel.work.collectLatest {
+                        binding.result.text = it
                     }
                 }
             }

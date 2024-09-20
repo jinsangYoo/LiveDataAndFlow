@@ -36,12 +36,6 @@
             android:text="Blur" />
 
         <Button
-            android:id="@+id/sharedflow"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Shared Flow" />
-
-        <Button
             android:id="@+id/widget"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
