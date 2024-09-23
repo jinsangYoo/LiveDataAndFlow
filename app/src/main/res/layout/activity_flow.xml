@@ -7,97 +7,109 @@
     android:id="@+id/flow"
     tools:context=".flow.FlowActivity">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/makeFlow"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="makeFlow" />
-
-        <Button
-            android:id="@+id/makeFlowWithEmit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="makeFlowWithEmit" />
-
-        <Button
-            android:id="@+id/makeFlowWithEmitTake2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="makeFlowWithEmitTake2" />
-
-        <Button
-            android:id="@+id/manualEmit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="manual Emit" />
-
-        <TextView
-            android:id="@+id/result"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="result" />
-
-        <Button
-            android:id="@+id/triggerChannel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="triggerChannel" />
-
-        <Button
-            android:id="@+id/collect"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="triggerCollect" />
-
-        <Button
-            android:id="@+id/collectLatest"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="triggerCollectLatest" />
-
-        <Button
-            android:id="@+id/conflateCollect"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="triggerConflateCollect" />
-
-        <Button
-            android:id="@+id/collectHotStream"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="triggerCollectHotStream" />
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#cccccc"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:gravity="center">
 
             <Button
-                android:id="@+id/sharedflow"
+                android:id="@+id/addCountAtStateFlow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="to Shared Flow" />
+                android:text="AddCountAtStateFlow" />
 
             <Button
-                android:id="@+id/channel"
+                android:id="@+id/makeFlow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="to Channel" />
+                android:text="makeFlow" />
+
+            <Button
+                android:id="@+id/makeFlowWithEmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="makeFlowWithEmit" />
+
+            <Button
+                android:id="@+id/makeFlowWithEmitTake2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="makeFlowWithEmitTake2" />
+
+            <Button
+                android:id="@+id/manualEmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="manual Emit" />
+
+            <TextView
+                android:id="@+id/result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="result" />
+
+            <Button
+                android:id="@+id/triggerChannel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="triggerChannel" />
+
+            <Button
+                android:id="@+id/collect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="triggerCollect" />
+
+            <Button
+                android:id="@+id/collectLatest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="triggerCollectLatest" />
+
+            <Button
+                android:id="@+id/conflateCollect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="triggerConflateCollect" />
+
+            <Button
+                android:id="@+id/collectHotStream"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="triggerCollectHotStream" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#cccccc"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/sharedflow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="to Shared Flow" />
+
+                <Button
+                    android:id="@+id/channel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="to Channel" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

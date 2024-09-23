@@ -119,4 +119,13 @@ class FlowViewModel : ViewModel() {
             }
         }
     }
+
+    private val _count = MutableStateFlow<Int>(0)
+    val count = _count.asStateFlow()
+
+    fun addCount() {
+        viewModelScope.launch {
+            _count.value++
+        }
+    }
 }

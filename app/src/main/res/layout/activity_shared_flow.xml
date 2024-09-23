@@ -19,6 +19,18 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/addCountOnSharedFlow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="addCountOnSharedFlow" />
+
+    </LinearLayout>
     <include layout="@layout/content_shared_flow" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

@@ -1,6 +1,7 @@
 package com.example.livedataandflow.flow
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
@@ -29,6 +30,10 @@ class FlowActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityFlowBinding.inflate(layoutInflater).apply {
+            addCountAtStateFlow.setOnClickListener {
+                viewModel.addCount()
+            }
+
             makeFlow.setOnClickListener {
                 lifecycleScope.launch {
                     repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -134,6 +139,7 @@ class FlowActivity : AppCompatActivity() {
         }
 
         observe()
+        Log.d(TAG, "onCreate")
     }
 
     override fun onStart() {
@@ -145,7 +151,32 @@ class FlowActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         Log.d(TAG, "onResume")
-        viewModel.triggerPollingPlayerState()
+//        viewModel.triggerPollingPlayerState()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG, "onPause")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.d(TAG, "onRestart")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG, "onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "onDestroy")
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        Log.d(TAG, "onConfigurationChanged")
     }
 
     private fun observe() {
@@ -166,6 +197,12 @@ class FlowActivity : AppCompatActivity() {
                         binding.result.text = it
                     }
                 }
+
+                launch {
+                    viewModel.count.collectLatest {
+                        Log.d(TAG, "count: $it")
+                    }
+                }
             }
         }
     }
@@ -177,7 +214,7 @@ class FlowActivity : AppCompatActivity() {
         }
     }
 
-    fun makeFlow() = flow {
+    private fun makeFlow() = flow {
         Log.d(TAG, "makeFlow...1")
         Log.d(TAG, "makeFlow...2")
         Log.d(TAG, "makeFlow...3")
@@ -185,7 +222,7 @@ class FlowActivity : AppCompatActivity() {
         emit(false)
     }
 
-    fun makeFlowWithEmit() = flow {
+    private fun makeFlowWithEmit() = flow {
         Log.d(TAG, "sending first value")
         emit(1)
         Log.d(TAG, "first value collected, sending another value")
