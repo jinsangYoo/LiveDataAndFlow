@@ -98,6 +98,28 @@ class FlowActivity : AppCompatActivity() {
                     startActivity(this)
                 }
             }
+
+            collect.setOnClickListener {
+                viewModel.triggerCollect()
+            }
+
+            collectLatest.setOnClickListener {
+                viewModel.triggerCollectLatest()
+            }
+
+            conflateCollect.setOnClickListener {
+                viewModel.triggerConflateCollect()
+            }
+
+            collectHotStream.setOnClickListener {
+                viewModel.triggerCollectHotStream()
+            }
+
+            channel.setOnClickListener {
+                Intent(applicationContext, ChannelActivity::class.java).run {
+                    startActivity(this)
+                }
+            }
         }
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.flow)) { v, insets ->

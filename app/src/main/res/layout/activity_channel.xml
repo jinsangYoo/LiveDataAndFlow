@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/flow"
+    tools:context=".flow.ChannelActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/sendChannel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="sendChannel" />
+
+        <Button
+            android:id="@+id/receiveChannel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="receiveChannel" />
+
+        <Button
+            android:id="@+id/receiveFlowChannel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="receiveFlowChannel" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
