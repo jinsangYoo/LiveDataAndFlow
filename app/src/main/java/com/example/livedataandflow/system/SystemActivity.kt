@@ -5,6 +5,7 @@ import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.view.WindowManager
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -49,6 +50,15 @@ class SystemActivity : AppCompatActivity() {
                 txtSystemLanguage.text = SPAINISH
             }
             txtSystemLanguage.text = getLocaleDefaultLanguageTag()
+
+            btnKeepScreenOnTurnOn.setOnClickListener {
+                txtKeepScreenOn.text = resources.getText(R.string.turn_on)
+                changeScreenOnState(true)
+            }
+            btnKeepScreenOnTurnOff.setOnClickListener {
+                txtKeepScreenOn.text = resources.getText(R.string.turn_off)
+                changeScreenOnState(false)
+            }
         }
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -121,5 +131,13 @@ class SystemActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         Log.d(TAG, "onDestroy")
+    }
+
+    private fun changeScreenOnState(onOff: Boolean) {
+        if (onOff) {
+            window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        } else {
+            window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        }
     }
 }

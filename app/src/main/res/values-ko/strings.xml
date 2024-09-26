@@ -3,4 +3,12 @@
     <string name="app_name">LiveDataAndFlow</string>
     <string name="hello">안녕</string>
     <string name="language_code">언어코드:</string>
+    <string name="keep_screen_on">화면 켜짐 유지:</string>
+    <string name="turn_on">켜기</string>
+    <string name="turn_off">끄기</string>
+    <string name="korean">한국어</string>
+    <string name="english">영어</string>
+    <string name="spainish">스페인어</string>
+    <string name="system">시스템</string>
+    <string name="get_system">시스템 가져오기</string>
 </resources>

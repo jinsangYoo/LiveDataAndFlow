@@ -3,4 +3,12 @@
     <string name="app_name">LiveDataAndFlow</string>
     <string name="hello">Hola</string>
     <string name="language_code">language code(es):</string>
+    <string name="keep_screen_on">keep screen on(es):</string>
+    <string name="turn_on">turn on(es)</string>
+    <string name="turn_off">turn off(es)</string>
+    <string name="korean">korean(es)</string>
+    <string name="english">english(es)</string>
+    <string name="spainish">spainish(es)</string>
+    <string name="system">system(es)</string>
+    <string name="get_system">get system(es)</string>
 </resources>

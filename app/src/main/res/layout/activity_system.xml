@@ -16,32 +16,32 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/language_code" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/txt_system_language"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:text="-" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/language_code" />
 
-        <Button
-            android:id="@+id/btn_lang"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="시스템 언어" />
+            <TextView
+                android:id="@+id/txt_system_language"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="-" />
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/btn_lang"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/get_system" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -53,28 +53,62 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="시스템" />
+                android:text="@string/system" />
 
             <Button
                 android:id="@+id/btn_apply_en_lang"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="영문" />
+                android:text="@string/english" />
 
             <Button
                 android:id="@+id/btn_apply_ko_lang"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="한국어" />
+                android:text="@string/korean" />
 
             <Button
                 android:id="@+id/btn_apply_es_lang"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="스페인어" />
+                android:text="@string/spainish" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/keep_screen_on" />
+
+            <TextView
+                android:id="@+id/txt_keep_screen_on"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="-" />
+
+            <Button
+                android:id="@+id/btn_keep_screen_on_turn_on"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/turn_on" />
+
+            <Button
+                android:id="@+id/btn_keep_screen_on_turn_off"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/turn_off" />
 
         </LinearLayout>
 

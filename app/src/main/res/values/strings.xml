@@ -48,4 +48,12 @@
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
     <string name="language_code">language code:</string>
+    <string name="keep_screen_on">keep screen on:</string>
+    <string name="turn_on">turn on</string>
+    <string name="turn_off">turn off</string>
+    <string name="korean">korean</string>
+    <string name="english">english</string>
+    <string name="spainish">spainish</string>
+    <string name="system">system</string>
+    <string name="get_system">get system</string>
 </resources>
