@@ -32,14 +32,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text="ko" />
+            android:text="-" />
 
         <Button
             android:id="@+id/btn_lang"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="시스템 언어 가져오기" />
+            android:text="시스템 언어" />
 
     </LinearLayout>
 
