@@ -53,21 +53,28 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="시스템꺼 적용" />
+                android:text="시스템" />
 
             <Button
-                android:id="@+id/btn_apply_eng_lang"
+                android:id="@+id/btn_apply_en_lang"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="영문 적용" />
+                android:text="영문" />
 
             <Button
-                android:id="@+id/btn_apply_kor_lang"
+                android:id="@+id/btn_apply_ko_lang"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="한국어 적용" />
+                android:text="한국어" />
+
+            <Button
+                android:id="@+id/btn_apply_es_lang"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="스페인어" />
 
         </LinearLayout>
 

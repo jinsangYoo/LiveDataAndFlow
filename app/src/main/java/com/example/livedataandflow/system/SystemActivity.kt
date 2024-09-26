@@ -21,6 +21,8 @@ class SystemActivity : AppCompatActivity() {
     private val viewModel: SystemViewModel by viewModels()
     private lateinit var binding: ActivitySystemBinding
 
+    private val SPAINISH = "es"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -34,13 +36,17 @@ class SystemActivity : AppCompatActivity() {
                 Locale.setDefault(Locale.getDefault())
                 txtSystemLanguage.text = Locale.getDefault().language
             }
-            btnApplyEngLang.setOnClickListener {
+            btnApplyEnLang.setOnClickListener {
                 txtSystemLanguage.text = Locale.ENGLISH.language
-                updateResources(applicationContext, Locale.ENGLISH.language)
+                updateLocale(applicationContext, Locale.ENGLISH.language)
             }
-            btnApplyKorLang.setOnClickListener {
+            btnApplyKoLang.setOnClickListener {
                 txtSystemLanguage.text = Locale.KOREAN.language
-                updateResources(applicationContext, Locale.KOREAN.language)
+                updateLocale(applicationContext, Locale.KOREAN.language)
+            }
+            btnApplyEsLang.setOnClickListener {
+                txtSystemLanguage.text = SPAINISH
+                updateLocale(applicationContext, SPAINISH)
             }
         }
         setContentView(binding.root)
@@ -51,7 +57,7 @@ class SystemActivity : AppCompatActivity() {
         }
     }
 
-    private fun updateResources(context: Context, language: String): Context {
+    private fun updateLocale(context: Context, language: String): Context {
         val locale = Locale(language)
         Locale.setDefault(locale)
 
@@ -59,10 +65,9 @@ class SystemActivity : AppCompatActivity() {
         configuration.setLocale(locale)
         configuration.setLayoutDirection(locale)
 
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.TIRAMISU) {
-            val android14OrAboveLocale = LocaleListCompat.forLanguageTags(language)
-            AppCompatDelegate.setApplicationLocales(android14OrAboveLocale)
-        }
+        val appLocale = LocaleListCompat.forLanguageTags(language)
+        AppCompatDelegate.setApplicationLocales(appLocale)
+
         return context.createConfigurationContext(configuration)
     }
 }
