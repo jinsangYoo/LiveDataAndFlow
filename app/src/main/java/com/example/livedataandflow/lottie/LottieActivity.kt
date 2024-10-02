@@ -42,7 +42,6 @@ class LottieActivity : AppCompatActivity() {
                 lotti.pauseAnimation()
             }
             normalCancel.setOnClickListener {
-//                lotti.setMinAndMaxFrame(0, 25)
                 lotti.setMinAndMaxFrame(1, 3)
                 lotti.cancelAnimation()
                 lotti.frame = 0
