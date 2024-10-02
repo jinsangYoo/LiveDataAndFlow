@@ -56,4 +56,7 @@
     <string name="spainish">spainish</string>
     <string name="system">system</string>
     <string name="get_system">get system</string>
+
+    <string name="rationale_title">Permission required</string>
+    <string name="rationale_message">we need permission for write <b>notification</b> and find your <b>location bla bla</b></string>
 </resources>

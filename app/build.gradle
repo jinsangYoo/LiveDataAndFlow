@@ -51,6 +51,7 @@ dependencies {
 
     implementation libs.airbnb.android.lottie
     implementation libs.jakewharton.timber
+    implementation libs.tedpermission.normal
     implementation libs.tedpermission.coroutine
 
     implementation libs.androidx.core.ktx

@@ -15,6 +15,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.livedataandflow.R
 import com.example.livedataandflow.databinding.ActivitySystemBinding
+import com.example.livedataandflow.locale.LocaleUtil.getLocaleDefaultLanguageTag
 import com.example.livedataandflow.string.defaultEmpty
 import java.util.Locale
 
@@ -112,10 +113,6 @@ class SystemActivity : AppCompatActivity() {
         Log.d(TAG, "in onResume::getLocaleDefaultLanguageTag(): ${getLocaleDefaultLanguageTag()}")
 
         Log.d(TAG, "in onResume::Locale.getDefault(): ${Locale.getDefault().language}")
-    }
-
-    private fun getLocaleDefaultLanguageTag(): String {
-        return AppCompatDelegate.getApplicationLocales().toLanguageTags().defaultEmpty(Locale.getDefault().language)
     }
 
     override fun onRestart() {

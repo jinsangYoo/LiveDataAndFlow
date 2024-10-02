@@ -38,6 +38,7 @@ jakewharton-timber = { module = "com.jakewharton.timber:timber", version.ref = "
 
 # tedpermission
 tedpermission-coroutine = { module = "io.github.ParkSangGwon:tedpermission-coroutine", version.ref = "tedpermission"}
+tedpermission-normal = { module = "io.github.ParkSangGwon:tedpermission-normal", version.ref = "tedpermission"}
 
 # Lottie
 airbnb-android-lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie"}
