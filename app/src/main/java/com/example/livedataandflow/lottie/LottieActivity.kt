@@ -17,7 +17,7 @@ class LottieActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLottieBinding.inflate(layoutInflater).apply {
-            lotti.addAnimatorListener(object : Animator.AnimatorListener{
+            normalLotti.addAnimatorListener(object : Animator.AnimatorListener{
                 override fun onAnimationStart(animation: Animator) {
                     Timber.d("normal lottie start")
                 }
@@ -35,19 +35,19 @@ class LottieActivity : AppCompatActivity() {
                 }
             })
             normalPlay.setOnClickListener {
-                lotti.setMinAndMaxFrame(4, 21)
-                lotti.playAnimation()
+                normalLotti.setMinAndMaxFrame(4, 21)
+                normalLotti.playAnimation()
             }
             normalStop.setOnClickListener {
-                lotti.pauseAnimation()
+                normalLotti.pauseAnimation()
             }
             normalCancel.setOnClickListener {
-                lotti.setMinAndMaxFrame(1, 3)
-                lotti.cancelAnimation()
-                lotti.frame = 0
+                normalLotti.setMinAndMaxFrame(1, 3)
+                normalLotti.cancelAnimation()
+                normalLotti.frame = 0
             }
 
-            lottiLong.addAnimatorListener(object : Animator.AnimatorListener{
+            longLotti.addAnimatorListener(object : Animator.AnimatorListener{
                 override fun onAnimationStart(animation: Animator) {
                     Timber.d("long lottie start")
                 }
@@ -65,16 +65,16 @@ class LottieActivity : AppCompatActivity() {
                 }
             })
             longPlay.setOnClickListener {
-                lottiLong.setMinAndMaxFrame(25, 216)
-                lottiLong.playAnimation()
+                longLotti.setMinAndMaxFrame(25, 216)
+                longLotti.playAnimation()
             }
             longStop.setOnClickListener {
-                lottiLong.pauseAnimation()
+                longLotti.pauseAnimation()
             }
             longCancel.setOnClickListener {
-                lottiLong.setMinAndMaxFrame(0, 246)
-                lottiLong.cancelAnimation()
-                lottiLong.frame = 0
+                longLotti.setMinAndMaxFrame(0, 246)
+                longLotti.cancelAnimation()
+                longLotti.frame = 0
             }
         }
 
