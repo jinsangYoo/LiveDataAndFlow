@@ -12,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.livedataandflow.databinding.ActivityMainBinding
 import com.example.livedataandflow.flow.FlowActivity
 import com.example.livedataandflow.image.BlurActivity
+import com.example.livedataandflow.lottie.LottieActivity
 import com.example.livedataandflow.system.SystemActivity
 import com.example.livedataandflow.widget.WidgetActivity
 import com.example.livedataandflow.workmanager.WMActivity
@@ -48,6 +49,11 @@ class MainActivity : AppCompatActivity() {
             }
             system.setOnClickListener {
                 Intent(applicationContext, SystemActivity::class.java).run {
+                    startActivity(this)
+                }
+            }
+            lottie.setOnClickListener {
+                Intent(applicationContext, LottieActivity::class.java).run {
                     startActivity(this)
                 }
             }

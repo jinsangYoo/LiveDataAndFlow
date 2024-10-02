@@ -47,6 +47,12 @@
             android:layout_height="wrap_content"
             android:text="System" />
 
+        <Button
+            android:id="@+id/lottie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lottie" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

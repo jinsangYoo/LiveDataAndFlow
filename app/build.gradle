@@ -49,6 +49,10 @@ dependencies {
     // viewModels()
     implementation 'androidx.fragment:fragment-ktx:1.5.5'
 
+    implementation libs.airbnb.android.lottie
+    implementation libs.jakewharton.timber
+    implementation libs.tedpermission.coroutine
+
     implementation libs.androidx.core.ktx
     implementation libs.androidx.appcompat
     implementation libs.material
