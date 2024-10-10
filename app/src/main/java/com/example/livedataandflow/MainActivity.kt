@@ -12,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.livedataandflow.databinding.ActivityMainBinding
 import com.example.livedataandflow.flow.FlowActivity
 import com.example.livedataandflow.image.BlurActivity
+import com.example.livedataandflow.image.PhotoPickerActivity
 import com.example.livedataandflow.lottie.LottieActivity
 import com.example.livedataandflow.permission.PermissionActivity
 import com.example.livedataandflow.system.SystemActivity
@@ -60,6 +61,11 @@ class MainActivity : AppCompatActivity() {
             }
             permission.setOnClickListener {
                 Intent(applicationContext, PermissionActivity::class.java).run {
+                    startActivity(this)
+                }
+            }
+            photoPicker.setOnClickListener {
+                Intent(applicationContext, PhotoPickerActivity::class.java).run {
                     startActivity(this)
                 }
             }

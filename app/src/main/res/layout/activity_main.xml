@@ -59,6 +59,12 @@
             android:layout_height="wrap_content"
             android:text="Permission" />
 
+        <Button
+            android:id="@+id/photo_picker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Photo Picker" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
